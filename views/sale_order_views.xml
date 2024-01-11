@@ -8,7 +8,8 @@
             <field name="model">sale.order</field>
             <field name="inherit_id" ref="sale.view_order_form"/>
             <field name="arch" type="xml">
-                <xpath expr="//group[@name='sale_order_subtotal']/field[@name='amount_untaxed']" position="after">
+                <!-- Use the correct XPath expression to find the group containing order lines -->
+                <xpath expr="//group[@name='order_line']/field[@name='product_uom_qty']" position="after">
                     <field name="custom_subtotal" readonly="1"/>
                 </xpath>
             </field>
